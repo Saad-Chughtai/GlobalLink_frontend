@@ -1,0 +1,221 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: var(--white);
+  z-index: 1000;
+  transition: var(--transition);
+  box-shadow: none;
+}
+
+.header.sticky {
+  box-shadow: var(--shadow-md);
+}
+
+.header .container {
+  height: 100%;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  font-family: var(--heading-font);
+  font-size: var(--font-size-h3);
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.logo:hover {
+  color: var(--secondary-color);
+}
+
+/* Desktop Navigation */
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
+  }
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: none;
+  border: none;
+  font-family: var(--body-font);
+  font-size: var(--font-size-body);
+  font-weight: 600;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: var(--transition);
+  border-radius: var(--border-radius-sm);
+}
+
+.nav-dropdown-toggle:hover {
+  color: var(--primary-color);
+  background: var(--light-gray);
+}
+
+.dropdown-icon {
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + var(--spacing-xs));
+  left: 0;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  min-width: 220px;
+  padding: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  animation: dropdownFadeIn 0.2s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu a {
+  padding: var(--spacing-sm);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition);
+  font-size: var(--font-size-body);
+  font-weight: 500;
+}
+
+.dropdown-menu a:hover {
+  background: var(--light-gray);
+  color: var(--primary-color);
+}
+
+.dropdown-menu .dropdown-cta {
+  background: var(--primary-color);
+  color: var(--white);
+  margin-top: var(--spacing-xs);
+  font-weight: 600;
+}
+
+.dropdown-menu .dropdown-cta:hover {
+  background: var(--secondary-color);
+  color: var(--white);
+}
+
+/* CTA Button */
+.cta-button {
+  display: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: var(--font-size-body);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.cta-button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 769px) {
+  .cta-button.desktop-cta {
+    display: inline-block;
+  }
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  transition: var(--transition);
+  z-index: 1001;
+}
+
+.mobile-menu-toggle:hover {
+  color: var(--primary-color);
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .cta-button.desktop-cta {
+    display: none;
+  }
+}
+

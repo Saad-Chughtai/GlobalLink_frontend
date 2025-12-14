@@ -1,0 +1,48 @@
+:root {
+  /* Colors */
+  --primary-color: #0A2463;
+  --secondary-color: #1E3A8A;
+  --text-color: #1F2937;
+  --text-secondary: #6B7280;
+  --light-gray: #F3F4F6;
+  --white: #FFFFFF;
+  --accent-gold: #F59E0B;
+  --success-green: #10B981;
+  --error-red: #EF4444;
+  
+  /* Typography */
+  --heading-font: 'Montserrat', sans-serif;
+  --body-font: 'Open Sans', sans-serif;
+  --font-size-h1: 48px;
+  --font-size-h2: 36px;
+  --font-size-h3: 24px;
+  --font-size-body: 16px;
+  --font-size-small: 14px;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.6;
+  
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 80px;
+  --container-width: 1200px;
+  
+  /* Design Elements */
+  --border-radius: 8px;
+  --border-radius-sm: 4px;
+  --border-radius-lg: 12px;
+  --transition: 0.3s ease-in-out;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.3);
+  
+  /* Breakpoints */
+  --breakpoint-mobile: 640px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-desktop: 1025px;
+}
+

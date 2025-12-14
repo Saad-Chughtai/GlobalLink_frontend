@@ -1,0 +1,137 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  background-image: url('/back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-color);
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-heading {
+  font-family: var(--heading-font);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: var(--line-height-heading);
+  color: var(--text-color);
+  margin: 0 0 var(--spacing-lg) 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.hero-subheading {
+  font-family: var(--body-font);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: var(--line-height-body);
+  color: var(--text-color);
+  margin: 0 0 var(--spacing-xl) 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .hero-heading {
+    font-size: 48px;
+  }
+
+  .hero-subheading {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 400px;
+    padding: 60px 0;
+    background-attachment: scroll; /* Better performance on mobile */
+  }
+
+  .hero-heading {
+    font-size: 36px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero-subheading {
+    font-size: 16px;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-sm);
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 400px;
+    padding: 60px 0;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 0;
+  }
+
+  .hero-heading {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .hero-subheading {
+    font-size: 15px;
+  }
+
+  .hero-cta {
+    gap: var(--spacing-xs);
+  }
+}
+

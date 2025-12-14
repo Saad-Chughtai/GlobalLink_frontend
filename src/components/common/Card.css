@@ -1,0 +1,140 @@
+/* Base Card Styles */
+.card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  width: 100%;
+  position: relative;
+  transition: var(--transition);
+}
+
+/* Variant: Default */
+.card-default {
+  background: var(--white);
+}
+
+/* Variant: Hover */
+.card-hover {
+  background: var(--white);
+}
+
+.card-hover:hover,
+.card-hoverable:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Variant: Bordered */
+.card-bordered {
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  box-shadow: none;
+}
+
+.card-bordered:hover,
+.card-bordered.card-hoverable:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Shadow */
+.card-shadow {
+  box-shadow: var(--shadow-md);
+}
+
+.card-shadow.card-hover:hover,
+.card-shadow.card-hoverable:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Padding Options */
+.card-padding-none {
+  padding: 0;
+}
+
+.card-padding-small {
+  padding: var(--spacing-sm);
+}
+
+.card-padding-medium {
+  padding: var(--spacing-lg);
+}
+
+.card-padding-large {
+  padding: var(--spacing-xl);
+}
+
+/* Hoverable State */
+.card-hoverable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-hoverable:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Clickable State (when onClick is provided) */
+.card-clickable {
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  width: 100%;
+  background: var(--white);
+}
+
+.card-clickable:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.card-clickable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.card-clickable:active {
+  transform: translateY(0);
+}
+
+/* Responsive Padding */
+@media (max-width: 768px) {
+  .card-padding-small {
+    padding: var(--spacing-xs);
+  }
+
+  .card-padding-medium {
+    padding: var(--spacing-md);
+  }
+
+  .card-padding-large {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 20px;
+  }
+
+  .feature-card {
+    padding: 24px !important;
+  }
+
+  .card-padding-medium {
+    padding: var(--spacing-sm);
+  }
+
+  .card-padding-large {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 16px;
+  }
+
+  .feature-card {
+    padding: 20px !important;
+  }
+}
+

@@ -1,0 +1,31 @@
+.law-team {
+  padding: var(--spacing-xl) 0;
+}
+
+.law-team h1 {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-color);
+}
+
+.law-team .page-intro {
+  text-align: center;
+  font-size: var(--font-size-body);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .law-team {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .law-team h1 {
+    font-size: var(--font-size-h2);
+  }
+}
+

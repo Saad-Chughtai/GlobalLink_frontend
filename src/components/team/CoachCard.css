@@ -1,0 +1,131 @@
+.coach-card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-md);
+  text-align: center;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.coach-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.coach-photo-wrapper {
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+
+.coach-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--white);
+  box-shadow: var(--shadow-md);
+  display: block;
+}
+
+.coach-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.coach-name {
+  font-family: var(--heading-font);
+  font-size: var(--font-size-h3);
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 var(--spacing-xs) 0;
+  line-height: var(--line-height-heading);
+}
+
+.coach-title {
+  font-family: var(--body-font);
+  font-size: var(--font-size-body);
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.coach-credential {
+  font-family: var(--body-font);
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+  line-height: var(--line-height-body);
+  margin: 0 0 var(--spacing-sm) 0;
+  flex: 1;
+}
+
+.coach-schools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+}
+
+.school-badge {
+  height: 40px;
+  width: auto;
+  max-width: 80px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: var(--transition);
+}
+
+.school-badge:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .coach-photo {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .coach-photo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .coach-name {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .coach-card {
+    padding: var(--spacing-sm);
+  }
+
+  .coach-photo {
+    width: 140px;
+    height: 140px;
+  }
+
+  .coach-name {
+    font-size: 18px;
+  }
+
+  .school-badge {
+    height: 35px;
+    max-width: 70px;
+  }
+}
+

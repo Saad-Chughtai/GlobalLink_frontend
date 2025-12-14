@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+@import './variables.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--text-color);
+  line-height: var(--line-height-body);
+  font-size: var(--font-size-body);
+  background-color: var(--white);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Global Form Input Styles */
+input,
+select,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--font-size-body);
+  line-height: 1.5;
+}
+
+/* Ensure select elements have proper vertical alignment */
+select {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
+/* Global Select Element Styles - Fix for visibility issues */
+select {
+  color: var(--text-color) !important;
+  background-color: var(--white);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  opacity: 1 !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+  text-fill-color: var(--text-color) !important;
+}
+
+/* Ensure select text is always readable when not disabled */
+select:not(:disabled) {
+  color: var(--text-color) !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+  text-fill-color: var(--text-color) !important;
+}
+
+/* Style option elements - ensure they're readable */
+select option {
+  color: var(--text-color) !important;
+  background-color: var(--white);
+  padding: var(--spacing-sm);
+}
+
+/* Placeholder option (empty value) - use darker gray for better visibility */
+select option[value=""] {
+  color: #4B5563 !important; /* Darker gray for better visibility */
+}
+
+/* Selected option should be dark */
+select option:checked,
+select option:selected {
+  color: var(--text-color) !important;
+  background-color: var(--light-gray);
+}
+
+/* When select has a placeholder value selected (required field with empty value), use darker gray */
+select:required:invalid {
+  color: #4B5563 !important; /* Darker gray - more visible than text-secondary */
+  -webkit-text-fill-color: #4B5563 !important;
+  text-fill-color: #4B5563 !important;
+}
+
+/* When select has a valid value selected, show dark text */
+select:required:valid,
+select:not([value=""]) {
+  color: var(--text-color) !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+  text-fill-color: var(--text-color) !important;
+}
+
+/* Layout styles are now in Layout.css */
+
+/* Mobile Font Sizes */
+@media (max-width: 640px) {
+  :root {
+    --font-size-h1: 36px;
+    --font-size-h2: 28px;
+    --font-size-h3: 20px;
+    --font-size-body: 15px;
+    --spacing-xxl: 48px;
+    --spacing-xl: 32px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  section {
+    padding: 48px 0 !important;
+  }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1024px) {
+  :root {
+    --font-size-h1: 42px;
+    --font-size-h2: 32px;
+  }
+}
+
+/* Global Grid Responsive Styles */
+@media (max-width: 1024px) {
+  .features-grid,
+  .coach-grid,
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .features-grid,
+  .coach-grid,
+  .services-grid,
+  .logo-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Ensure minimum touch target size for all interactive elements */
+  button,
+  a,
+  input[type="button"],
+  input[type="submit"],
+  input[type="checkbox"],
+  input[type="radio"],
+  select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Links in navigation and lists */
+  nav a,
+  .footer-links a,
+  .mobile-nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
