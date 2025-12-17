@@ -10,8 +10,19 @@
   font-weight: 700;
   color: var(--text-color);
   text-align: center;
-  margin: 0 0 var(--spacing-xl) 0;
+  margin: 0 0 var(--spacing-md) 0;
   line-height: var(--line-height-heading);
+}
+
+.media-mentions-subheading {
+  font-family: var(--body-font);
+  font-size: 18px;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0 0 var(--spacing-xl) 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .media-grid {

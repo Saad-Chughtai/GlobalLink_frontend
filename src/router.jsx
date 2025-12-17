@@ -12,6 +12,9 @@ const MBATeam = lazy(() => import('./pages/MBATeam'));
 const LawTeam = lazy(() => import('./pages/LawTeam'));
 const CollegeTeam = lazy(() => import('./pages/CollegeTeam'));
 const FreeConsultation = lazy(() => import('./pages/FreeConsultation'));
+const CollegeConsultation = lazy(() => import('./pages/CollegeConsultation'));
+const MBAConsultation = lazy(() => import('./pages/MBAConsultation'));
+const LawSchoolConsultation = lazy(() => import('./pages/LawSchoolConsultation'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const About = lazy(() => import('./pages/About'));
@@ -80,7 +83,7 @@ export const router = createBrowserRouter([
             path: 'free-consultation',
             element: (
               <LazyLoadWrapper>
-                <FreeConsultation />
+                <MBAConsultation />
               </LazyLoadWrapper>
             ),
           },
@@ -117,7 +120,7 @@ export const router = createBrowserRouter([
             path: 'free-consultation',
             element: (
               <LazyLoadWrapper>
-                <FreeConsultation />
+                <LawSchoolConsultation />
               </LazyLoadWrapper>
             ),
           },
@@ -154,7 +157,7 @@ export const router = createBrowserRouter([
             path: 'free-consultation',
             element: (
               <LazyLoadWrapper>
-                <FreeConsultation />
+                <CollegeConsultation />
               </LazyLoadWrapper>
             ),
           },

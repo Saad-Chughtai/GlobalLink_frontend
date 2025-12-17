@@ -12,8 +12,8 @@ const LawTeam = () => {
       credential: 'Former Admissions Officer, Yale Law School',
       photo: '/images/team/emily.jpg',
       schools: [
-        { name: 'Yale Law School', logo: '/images/logos/yale.png' },
-        { name: 'Harvard Law School', logo: '/images/logos/harvard.png' }
+        { name: 'Yale Law School', logo: '/images/logos/Yale-logo-1024x330.png' },
+        { name: 'Harvard Law School', logo: '/images/logos/Harvard-1-1.png' }
       ],
     },
     {
@@ -23,8 +23,8 @@ const LawTeam = () => {
       credential: 'Former Admissions Officer, Stanford Law School',
       photo: '/images/team/michael.jpg',
       schools: [
-        { name: 'Stanford Law School', logo: '/images/logos/stanford.png' },
-        { name: 'Columbia Law School', logo: '/images/logos/columbia.png' }
+        { name: 'Stanford Law School', logo: '/images/logos/Stanford-University.png' },
+        { name: 'Columbia Law School', logo: '/images/logos/columbia-1-1.png' }
       ],
     },
   ];

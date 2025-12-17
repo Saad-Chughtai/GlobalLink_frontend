@@ -25,9 +25,20 @@ const FinalCTA = () => {
             variants={scaleIn}
             transition={{ delay: 0.2 }}
           >
-            Get candid feedback and strategic advice from former admissions decision-makers
+            You bring the ambition. <strong>We'll bring the strategy.</strong>
           </motion.h2>
+          <motion.p
+            className="final-cta-subheading"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={scaleIn}
+            transition={{ delay: 0.3 }}
+          >
+            Get candid feedback and strategic advice from former admissions decision-makers
+          </motion.p>
           <motion.div
+            className="final-cta-buttons"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -37,9 +48,23 @@ const FinalCTA = () => {
             <Button
               variant="primary"
               size="large"
-              onClick={() => navigate('/free-consultation')}
+              onClick={() => navigate('/college/free-consultation')}
             >
-              Book Free Consultation
+              College Free Consultation
+            </Button>
+            <Button
+              variant="primary"
+              size="large"
+              onClick={() => navigate('/mba/free-consultation')}
+            >
+              MBA Free Consultation
+            </Button>
+            <Button
+              variant="primary"
+              size="large"
+              onClick={() => navigate('/law/free-consultation')}
+            >
+              Law School Free Consultation
             </Button>
           </motion.div>
         </motion.div>

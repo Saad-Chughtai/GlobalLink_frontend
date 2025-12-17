@@ -24,6 +24,22 @@
   line-height: var(--line-height-body);
 }
 
+.team-featured-image {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto var(--spacing-xl) auto;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.team-featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 .coach-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -35,6 +51,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
 /* Responsive Styles */

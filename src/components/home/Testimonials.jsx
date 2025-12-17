@@ -62,13 +62,23 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="testimonial-slide">
               <Card hoverable className="testimonial-card">
-                <div className="testimonial-rating">
-                  {renderStars(testimonial.rating)}
-                </div>
+                {testimonial.headline && (
+                  <h3 className="testimonial-headline">{testimonial.headline}</h3>
+                )}
                 <p className="testimonial-quote">"{testimonial.quote}"</p>
                 <div className="testimonial-author">
-                  <h4 className="testimonial-name">{testimonial.name}</h4>
-                  <p className="testimonial-school">{testimonial.school}</p>
+                  <div className="testimonial-info">
+                    <h4 className="testimonial-name">{testimonial.name}</h4>
+                    <p className="testimonial-school">{testimonial.school} admit</p>
+                  </div>
+                  {testimonial.schoolLogo && (
+                    <img
+                      src={testimonial.schoolLogo}
+                      alt={testimonial.school}
+                      className="testimonial-school-logo"
+                      loading="lazy"
+                    />
+                  )}
                 </div>
               </Card>
             </div>

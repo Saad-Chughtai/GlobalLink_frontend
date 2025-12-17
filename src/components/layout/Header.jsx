@@ -59,15 +59,17 @@ const Header = () => {
       key: 'college',
       services: '/college',
       team: '/college/team',
-      resources: '/blog',
+      allInclusive: '/college',
+      hourlyCoaching: '/college',
       consultation: '/college/free-consultation',
     },
     {
-      label: 'MBA',
+      label: 'Business School',
       key: 'mba',
       services: '/mba',
       team: '/mba/team',
-      resources: '/blog',
+      allInclusive: '/mba',
+      hourlyCoaching: '/mba',
       consultation: '/mba/free-consultation',
     },
     {
@@ -75,7 +77,8 @@ const Header = () => {
       key: 'law',
       services: '/law',
       team: '/law/team',
-      resources: '/blog',
+      allInclusive: '/law',
+      hourlyCoaching: '/law',
       consultation: '/law/free-consultation',
     },
   ];
@@ -146,6 +149,33 @@ const Header = () => {
                       }}
                     >
                       <Link
+                        to={item.team}
+                        onClick={() => {
+                          setActiveDropdown(null);
+                          closeMobileMenu();
+                        }}
+                      >
+                        Meet The Team
+                      </Link>
+                      <Link
+                        to={item.allInclusive}
+                        onClick={() => {
+                          setActiveDropdown(null);
+                          closeMobileMenu();
+                        }}
+                      >
+                        All-Inclusive Package
+                      </Link>
+                      <Link
+                        to={item.hourlyCoaching}
+                        onClick={() => {
+                          setActiveDropdown(null);
+                          closeMobileMenu();
+                        }}
+                      >
+                        Hourly Coaching
+                      </Link>
+                      <Link
                         to={item.services}
                         onClick={() => {
                           setActiveDropdown(null);
@@ -153,24 +183,6 @@ const Header = () => {
                         }}
                       >
                         Services
-                      </Link>
-                      <Link
-                        to={item.team}
-                        onClick={() => {
-                          setActiveDropdown(null);
-                          closeMobileMenu();
-                        }}
-                      >
-                        Team
-                      </Link>
-                      <Link
-                        to={item.resources}
-                        onClick={() => {
-                          setActiveDropdown(null);
-                          closeMobileMenu();
-                        }}
-                      >
-                        Resources
                       </Link>
                       <Link
                         to={item.consultation}

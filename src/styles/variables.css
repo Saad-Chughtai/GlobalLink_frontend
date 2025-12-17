@@ -1,44 +1,81 @@
 :root {
-  /* Colors */
-  --primary-color: #0A2463;
-  --secondary-color: #1E3A8A;
-  --text-color: #1F2937;
-  --text-secondary: #6B7280;
-  --light-gray: #F3F4F6;
+  /* Primary Colors - Royal Blue Palette */
+  --primary-color: #1e40af;
+  --primary-hover: #2563eb;
+  --deep-navy: #1e293b;
+  --soft-white: #fafafa;
+  
+  /* Accent Colors - Lavender Palette */
+  --accent-lavender: #a78bfa;
+  --accent-lavender-hover: #8b5cf6;
+  --sky-blue: #0ea5e9;
+  --slate: #64748b;
+  
+  /* Neutral Scale */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-600: #4b5563;
+  --gray-900: #111827;
+  
+  /* Text Colors */
+  --text-color: var(--deep-navy);
+  --text-secondary: var(--slate);
+  --text-light: var(--gray-600);
+  
+  /* Background Colors */
+  --light-gray: var(--gray-100);
   --white: #FFFFFF;
-  --accent-gold: #F59E0B;
+  --bg-gradient: linear-gradient(135deg, #2563eb 0%, #a78bfa 100%);
+  
+  /* Status Colors */
   --success-green: #10B981;
   --error-red: #EF4444;
   
   /* Typography */
   --heading-font: 'Montserrat', sans-serif;
   --body-font: 'Open Sans', sans-serif;
-  --font-size-h1: 48px;
-  --font-size-h2: 36px;
-  --font-size-h3: 24px;
+  --font-size-h1: 48px; /* Mobile: ~36px */
+  --font-size-h2: 36px; /* Mobile: ~28px */
+  --font-size-h3: 24px; /* Mobile: ~20px */
   --font-size-body: 16px;
   --font-size-small: 14px;
   --line-height-heading: 1.2;
   --line-height-body: 1.6;
+  --letter-spacing-tight: -0.02em;
   
-  /* Spacing */
+  /* Spacing - Multiples of 4px */
   --spacing-xs: 8px;
   --spacing-sm: 16px;
   --spacing-md: 24px;
   --spacing-lg: 32px;
   --spacing-xl: 48px;
   --spacing-xxl: 80px;
+  --spacing-xxxl: 128px; /* For large sections */
   --container-width: 1200px;
+  
+  /* Section Padding */
+  --section-padding-mobile: 48px; /* py-12 */
+  --section-padding-desktop: 80px; /* py-20 */
+  --section-padding-large: 128px; /* py-32 */
   
   /* Design Elements */
   --border-radius: 8px;
   --border-radius-sm: 4px;
   --border-radius-lg: 12px;
-  --transition: 0.3s ease-in-out;
+  --border-radius-xl: 16px; /* rounded-2xl */
+  --border-radius-2xl: 24px; /* rounded-3xl */
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s ease-out;
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
   --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.3);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Z-Index Scale */
+  --z-header: 50;
+  --z-dropdown: 60;
+  --z-modal: 100;
   
   /* Breakpoints */
   --breakpoint-mobile: 640px;

@@ -1,5 +1,6 @@
 import Hero from '../components/home/Hero';
-import LogoGrid from '../components/home/LogoGrid';
+import LogoCarousel from '../components/home/LogoCarousel';
+import ServicesCards from '../components/home/ServicesCards';
 import ValueProps from '../components/home/ValueProps';
 import TeamPreview from '../components/home/TeamPreview';
 import Testimonials from '../components/home/Testimonials';
@@ -19,15 +20,16 @@ const Home = () => {
         image="/images/og-image.jpg"
       />
       <div className="home-page">
-      <Hero />
-      <LogoGrid />
-      <ValueProps />
-      <TeamPreview />
-      <Testimonials />
-      <MediaMentions />
-      <HowItWorks />
-      <FinalCTA />
-    </div>
+        <Hero />
+        <LogoCarousel />
+        <ServicesCards />
+        <ValueProps />
+        <TeamPreview />
+        <Testimonials />
+        <MediaMentions />
+        <HowItWorks />
+        <FinalCTA />
+      </div>
     </>
   );
 };

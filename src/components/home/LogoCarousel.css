@@ -1,0 +1,108 @@
+.logo-carousel-section {
+  background-color: var(--white);
+  padding: var(--spacing-xxl) 0;
+  overflow: hidden;
+}
+
+.logo-carousel-heading {
+  font-family: var(--heading-font);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-color);
+  text-align: center;
+  margin: 0 0 var(--spacing-xl) 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.logo-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.logo-carousel-track {
+  display: flex;
+  gap: var(--spacing-xxl);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-carousel-item {
+  flex-shrink: 0;
+  width: 240px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  padding: var(--spacing-md);
+}
+
+.logo-carousel-item:hover {
+  opacity: 0.8;
+}
+
+.logo-carousel-item img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(0%);
+  transition: filter 0.3s ease;
+}
+
+.logo-carousel-item:hover img {
+  filter: grayscale(0%);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .logo-carousel-track {
+    gap: var(--spacing-xl);
+  }
+
+  .logo-carousel-item {
+    width: 200px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-carousel-heading {
+    font-size: 18px;
+    padding: 0 var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .logo-carousel-track {
+    gap: var(--spacing-lg);
+  }
+
+  .logo-carousel-item {
+    width: 160px;
+    height: 100px;
+    padding: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 640px) {
+  .logo-carousel-heading {
+    font-size: 16px;
+  }
+
+  .logo-carousel-track {
+    gap: var(--spacing-md);
+  }
+
+  .logo-carousel-item {
+    width: 140px;
+    height: 90px;
+  }
+}
+

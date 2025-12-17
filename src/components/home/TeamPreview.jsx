@@ -35,17 +35,18 @@ const TeamPreview = () => {
           of admissions coaches who used to run the admissions offices at top schools.
         </motion.p>
         <motion.div
-          className="coach-grid"
+          className="team-featured-image"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={staggerContainer}
+          variants={fadeInUp}
+          transition={{ delay: 0.3 }}
         >
-          {previewCoaches.map((coach) => (
-            <motion.div key={coach.id} variants={fadeInUp}>
-              <CoachCard coach={coach} />
-            </motion.div>
-          ))}
+          <img
+            src="/images/team/team-featured.jpg"
+            alt="Fortuna Admissions Team"
+            loading="lazy"
+          />
         </motion.div>
         <motion.div
           className="team-cta"
@@ -58,9 +59,23 @@ const TeamPreview = () => {
           <Button
             variant="outline"
             size="large"
+            onClick={() => navigate('/college/team')}
+          >
+            College Coaches
+          </Button>
+          <Button
+            variant="outline"
+            size="large"
             onClick={() => navigate('/mba/team')}
           >
-            View Full Team
+            MBA Coaches
+          </Button>
+          <Button
+            variant="outline"
+            size="large"
+            onClick={() => navigate('/law/team')}
+          >
+            Law School Coaches
           </Button>
         </motion.div>
       </div>

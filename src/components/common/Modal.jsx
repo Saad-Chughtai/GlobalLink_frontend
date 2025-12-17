@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { FiX } from 'react-icons/fi';
+import './Modal.css';
 
 const Modal = ({ isOpen, onClose, title, children }) => {
   useEffect(() => {
