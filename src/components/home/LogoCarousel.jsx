@@ -4,10 +4,8 @@ import { fadeInUp } from '../../utils/animations';
 import './LogoCarousel.css';
 
 const LogoCarousel = () => {
-  // Select specific schools to match the screenshot layout
-  // Carnegie Mellon, Cambridge, Stanford, Columbia, and Harvard
-  const featuredSchoolIds = [18, 1, 19, 2, 3]; // IDs for: Carnegie Mellon, Cambridge, Stanford, Columbia, Harvard
-  const featuredSchools = schools.filter(school => featuredSchoolIds.includes(school.id));
+  // Duplicate schools array for seamless infinite scroll
+  const duplicatedSchools = [...schools, ...schools, ...schools];
 
   return (
     <section className="logo-carousel-section">
@@ -23,8 +21,8 @@ const LogoCarousel = () => {
         </motion.h2>
         <div className="logo-carousel-wrapper">
           <div className="logo-carousel-track">
-            {featuredSchools.map((school) => (
-              <div key={school.id} className="logo-carousel-item">
+            {duplicatedSchools.map((school, index) => (
+              <div key={`${school.id}-${index}`} className="logo-carousel-item">
                 <img
                   src={school.logo}
                   alt={school.name}

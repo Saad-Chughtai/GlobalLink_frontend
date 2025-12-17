@@ -38,21 +38,21 @@ const Hero = () => {
             size="large"
             onClick={() => navigate('/college/free-consultation')}
           >
-            College Free Consult →
+            College Free Consult
           </Button>
           <Button
             variant="primary"
             size="large"
             onClick={() => navigate('/mba/free-consultation')}
           >
-            Business School Free Consult →
+            Business School Free Consult
           </Button>
           <Button
             variant="primary"
             size="large"
             onClick={() => navigate('/law/free-consultation')}
           >
-            Law School Free Consult →
+            Law School Free Consult
           </Button>
         </motion.div>
       </div>

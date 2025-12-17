@@ -45,7 +45,7 @@ export const mbaServices = {
       id: 4,
       name: 'HBS Prep',
       school: 'Harvard Business School',
-      logo: '/images/logos/Harvard-1-1.png',
+      logo: '/images/logos/harvard.png',
       description: 'Excel in HBS\'s fast-paced interview and post-interview reflection.',
       features: [
         'Make the most of your 30 minutes',
@@ -58,7 +58,7 @@ export const mbaServices = {
       id: 5,
       name: 'Wharton Prep',
       school: 'Wharton',
-      logo: '/images/logos/UPenn-logo-1024x330.png',
+      logo: '/images/logos/wharton.png',
       description: 'Coaching for Wharton\'s interactive group interview setting.',
       features: [
         'Simulated team-based discussion',
@@ -71,7 +71,7 @@ export const mbaServices = {
       id: 6,
       name: 'MIT Sloan Prep',
       school: 'MIT Sloan',
-      logo: '/images/logos/MIT-logo-1024x330.png',
+      logo: '/images/logos/mit.png',
       description: 'Master Sloan\'s unique interview process and behavioral questions.',
       features: [
         'Strategy for pre-interview essays',

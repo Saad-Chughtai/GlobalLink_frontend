@@ -12,8 +12,8 @@ const CollegeTeam = () => {
       credential: 'Former Admissions Officer, Stanford University',
       photo: '/images/team/jessica.jpg',
       schools: [
-        { name: 'Stanford University', logo: '/images/logos/Stanford-University.png' },
-        { name: 'MIT', logo: '/images/logos/MIT-logo-1024x330.png' }
+        { name: 'Stanford University', logo: '/images/logos/stanford.png' },
+        { name: 'MIT', logo: '/images/logos/mit.png' }
       ],
     },
     {
@@ -23,8 +23,8 @@ const CollegeTeam = () => {
       credential: 'Former Admissions Officer, Harvard University',
       photo: '/images/team/david.jpg',
       schools: [
-        { name: 'Harvard University', logo: '/images/logos/Harvard-1-1.png' },
-        { name: 'Yale University', logo: '/images/logos/Yale-logo-1024x330.png' }
+        { name: 'Harvard University', logo: '/images/logos/harvard.png' },
+        { name: 'Yale University', logo: '/images/logos/yale.png' }
       ],
     },
   ];

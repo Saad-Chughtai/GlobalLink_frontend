@@ -1,50 +1,61 @@
 .logo-carousel-section {
-  background-color: var(--white);
+  background-color: var(--light-gray);
   padding: var(--spacing-xxl) 0;
   overflow: hidden;
 }
 
 .logo-carousel-heading {
   font-family: var(--heading-font);
-  font-size: 22px;
-  font-weight: 500;
+  font-size: var(--font-size-h2);
+  font-weight: 700;
   color: var(--text-color);
   text-align: center;
   margin: 0 0 var(--spacing-xl) 0;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.5;
 }
 
 .logo-carousel-wrapper {
   position: relative;
   width: 100%;
-  overflow: visible;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
 }
 
 .logo-carousel-track {
   display: flex;
-  gap: var(--spacing-xxl);
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+  animation: scroll 60s linear infinite;
+  will-change: transform;
 }
 
 .logo-carousel-item {
   flex-shrink: 0;
-  width: 240px;
-  height: 140px;
+  width: 150px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 1;
+  opacity: 0.7;
   transition: opacity 0.3s ease;
-  padding: var(--spacing-md);
 }
 
 .logo-carousel-item:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .logo-carousel-item img {
@@ -53,7 +64,7 @@
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(0%);
+  filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
 
@@ -61,48 +72,39 @@
   filter: grayscale(0%);
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .logo-carousel-track {
-    gap: var(--spacing-xl);
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-
-  .logo-carousel-item {
-    width: 200px;
-    height: 120px;
+  100% {
+    transform: translateX(calc(-150px * 19 - var(--spacing-xl) * 19));
   }
 }
 
+/* Pause animation on hover */
+.logo-carousel-wrapper:hover .logo-carousel-track {
+  animation-play-state: paused;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .logo-carousel-heading {
-    font-size: 18px;
+    font-size: 24px;
     padding: 0 var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
-  }
-
-  .logo-carousel-track {
-    gap: var(--spacing-lg);
   }
 
   .logo-carousel-item {
-    width: 160px;
-    height: 100px;
-    padding: var(--spacing-sm);
-  }
-}
-
-@media (max-width: 640px) {
-  .logo-carousel-heading {
-    font-size: 16px;
+    width: 120px;
+    height: 60px;
   }
 
-  .logo-carousel-track {
-    gap: var(--spacing-md);
-  }
-
-  .logo-carousel-item {
-    width: 140px;
-    height: 90px;
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-120px * 19 - var(--spacing-xl) * 19));
+    }
   }
 }
 
