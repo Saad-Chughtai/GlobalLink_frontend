@@ -116,7 +116,7 @@ const ValueProps = () => {
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              What Makes Fortuna Different
+              What Makes Global Link Different
             </motion.h2>
             <div className="stats-grid">
               {stats.map((stat) => (

@@ -40,7 +40,7 @@ const MediaMentions = () => {
               variants={fadeInUp}
               transition={{ delay: 0.2 }}
             >
-              As education industry veterans, the Fortuna team is regularly sought out by journalists and media outlets worldwide for expert insights on admissions trends and strategies.
+              As education industry veterans, the Global Link team is regularly sought out by journalists and media outlets worldwide for expert insights on admissions trends and strategies.
             </motion.p>
           </motion.div>
           <motion.div

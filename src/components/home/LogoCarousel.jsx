@@ -17,7 +17,7 @@ const LogoCarousel = () => {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          More than 5,000 students gained admission to these schools thanks to Fortuna
+          More than 5,000 students gained admission to these schools thanks to Global Link
         </motion.h2>
         <div className="logo-carousel-wrapper">
           <div className="logo-carousel-track">

@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
           <section>
             <h2>Introduction</h2>
             <p>
-              Fortuna Admissions ("we," "our," or "us") is committed to protecting your privacy.
+              Global Link Admissions ("we," "our," or "us") is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, disclose, and safeguard your
               information when you visit our website.
             </p>
@@ -35,7 +35,7 @@ const PrivacyPolicy = () => {
             <h2>Contact Us</h2>
             <p>
               If you have questions about this Privacy Policy, please contact us at
-              privacy@fortunaadmissions.com.
+              privacy@globallinkadmissions.com.
             </p>
           </section>
         </div>

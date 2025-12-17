@@ -30,7 +30,7 @@ const TeamPreview = () => {
           variants={fadeInUp}
           transition={{ delay: 0.2 }}
         >
-          At Fortuna, over the past 13 years we've assembled an unparalleled team
+          At Global Link, over the past 13 years we've assembled an unparalleled team
           of admissions coaches who used to run the admissions offices at top schools.
         </motion.p>
         <motion.div
@@ -43,7 +43,7 @@ const TeamPreview = () => {
         >
           <img
             src="/images/team/team.webp"
-            alt="Fortuna Admissions Team"
+            alt="Global Link Admissions Team"
             loading="lazy"
           />
         </motion.div>

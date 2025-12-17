@@ -15,8 +15,8 @@ const Home = () => {
     <>
       <SEO 
         title="MBA, Law, and College Admissions Consulting"
-        description="Expert admissions consulting from former admissions directors at top schools. Triple your chances of admission with Fortuna."
-        keywords="MBA admissions, law school admissions, college admissions, consulting, Fortuna Admissions"
+        description="Expert admissions consulting from former admissions directors at top schools. Triple your chances of admission with Global Link."
+        keywords="MBA admissions, law school admissions, college admissions, consulting, Global Link Admissions"
         image="/images/og-image.jpg"
       />
       <div className="home-page">

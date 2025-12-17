@@ -14,7 +14,7 @@ const LogoGrid = () => {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          More than 5,000 students gained admission to these schools thanks to Fortuna
+          More than 5,000 students gained admission to these schools thanks to Global Link
         </motion.h2>
         <motion.div
           className="logo-grid"

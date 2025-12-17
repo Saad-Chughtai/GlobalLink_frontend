@@ -17,7 +17,7 @@ const MBAConsultation = () => {
             <div className="consultation-info">
               <h1>Your Most Valuable 30 Minutes This Week</h1>
               <p className="subtitle">
-                At Fortuna Admissions, we don't do sales pitches. We have real
+                At Global Link Admissions, we don't do sales pitches. We have real
                 conversations.
               </p>
 

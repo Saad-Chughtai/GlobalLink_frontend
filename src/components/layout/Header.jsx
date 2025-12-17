@@ -113,7 +113,7 @@ const Header = () => {
           <nav className="nav">
             {/* Logo */}
             <Link to="/" className="logo" onClick={closeMobileMenu}>
-              Fortuna Admissions
+              Global Link Admissions
             </Link>
 
             {/* Desktop Navigation */}

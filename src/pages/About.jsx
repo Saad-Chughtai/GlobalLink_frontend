@@ -10,8 +10,8 @@ const About = () => {
     <>
       <SEO 
         title="About Us"
-        description="Learn about Fortuna Admissions - a top-ranked global admissions consulting firm with former admissions directors from the world's top schools."
-        keywords="about Fortuna Admissions, admissions consulting firm, former admissions directors, MBA admissions consultants"
+        description="Learn about Global Link Admissions - a top-ranked global admissions consulting firm with former admissions directors from the world's top schools."
+        keywords="about Global Link Admissions, admissions consulting firm, former admissions directors, MBA admissions consultants"
         image="/images/about/og-image.jpg"
       />
       <div className="about-page">
@@ -25,7 +25,7 @@ const About = () => {
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              About Fortuna Admissions
+              About Global Link Admissions
             </motion.h1>
             <motion.p
               className="about-hero-subtitle"
@@ -52,7 +52,7 @@ const About = () => {
             >
               <motion.h2 variants={fadeInUp}>Our Mission</motion.h2>
               <motion.p variants={fadeInUp} className="mission-text">
-                At Fortuna Admissions, we believe that every candidate has a unique story worth telling. 
+                At Global Link Admissions, we believe that every candidate has a unique story worth telling. 
                 Our mission is to help you tell that story in a way that resonates with admissions committees 
                 at the world's top schools. With over 13 years of experience and a team of former admissions 
                 directors, we've helped thousands of students gain admission to their dream schools.
@@ -98,7 +98,7 @@ const About = () => {
               <motion.div className="value-item" variants={fadeInUp}>
                 <h3>Proven Results</h3>
                 <p>
-                  Working with Fortuna more than triples your chances of admission. That's why 40% of 
+                  Working with Global Link more than triples your chances of admission. That's why 40% of 
                   our clients are referred by former clients - they know we deliver.
                 </p>
               </motion.div>

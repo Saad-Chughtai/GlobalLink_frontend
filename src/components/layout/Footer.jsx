@@ -20,12 +20,12 @@ const Footer = () => {
             <Link to="/" className="footer-logo">
               <span className="logo-f">F</span>
               <div className="logo-text">
-                <span className="logo-fortuna">FORTUNA</span>
+                <span className="logo-fortuna">GLOBAL LINK</span>
                 <span className="logo-admissions">ADMISSIONS</span>
               </div>
             </Link>
-            <a href="mailto:info@fortunaadmissions.com" className="footer-email">
-              info@fortunaadmissions.com
+            <a href="mailto:info@globallinkadmissions.com" className="footer-email">
+              info@globallinkadmissions.com
             </a>
             <div className="footer-social">
               <a
