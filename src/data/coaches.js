@@ -5,7 +5,7 @@ export const coaches = [
     title: 'Founder',
     credential: 'Former Head of MBA Admissions at Wharton',
     photo: '/images/team/judith.jpg',
-    schools: [{ name: 'Wharton', logo: '/images/logos/wharton.png' }],
+    schools: [{ name: 'Wharton', logo: '/images/logos/UPenn-logo-1024x330.png' }],
     isFeatured: true,
   },
   {
@@ -23,7 +23,7 @@ export const coaches = [
     title: 'Founder',
     credential: 'Former Director of Admissions at INSEAD',
     photo: '/images/team/caroline.jpg',
-    schools: [{ name: 'INSEAD', logo: '/images/logos/insead.png' }],
+    schools: [{ name: 'INSEAD', logo: '/images/logos/General-logos-2.png' }],
     isFeatured: true,
   },
   {
@@ -32,7 +32,7 @@ export const coaches = [
     title: 'Director',
     credential: 'Stanford GSB Alum & Former MBA Admissions Interviewer',
     photo: '/images/team/heidi.jpg',
-    schools: [{ name: 'Stanford', logo: '/images/logos/stanford.png' }],
+    schools: [{ name: 'Stanford', logo: '/images/logos/Stanford-University.png' }],
   },
   {
     id: 5,
@@ -41,9 +41,9 @@ export const coaches = [
     credential: 'Harvard, Stanford, INSEAD Experience',
     photo: '/images/team/karla.jpg',
     schools: [
-      { name: 'Harvard', logo: '/images/logos/harvard.png' },
-      { name: 'Stanford', logo: '/images/logos/stanford.png' },
-      { name: 'INSEAD', logo: '/images/logos/insead.png' },
+      { name: 'Harvard', logo: '/images/logos/Harvard-1-1.png' },
+      { name: 'Stanford', logo: '/images/logos/Stanford-University.png' },
+      { name: 'INSEAD', logo: '/images/logos/General-logos-2.png' },
     ],
   },
   {
@@ -52,7 +52,7 @@ export const coaches = [
     title: 'Director',
     credential: 'Former Associate Dean at Chicago Booth',
     photo: '/images/team/patty.jpg',
-    schools: [{ name: 'Chicago Booth', logo: '/images/logos/booth.png' }],
+    schools: [{ name: 'Chicago Booth', logo: '/images/logos/General-logos-2.png' }],
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ export const coaches = [
     title: 'Director',
     credential: 'Former Associate Director at Wharton',
     photo: '/images/team/michel.jpg',
-    schools: [{ name: 'Wharton', logo: '/images/logos/wharton.png' }],
+    schools: [{ name: 'Wharton', logo: '/images/logos/UPenn-logo-1024x330.png' }],
   },
   {
     id: 8,
@@ -68,7 +68,7 @@ export const coaches = [
     title: 'Director',
     credential: '#1 Ranked Coach by Poets&Quants | Former LBS Admissions',
     photo: '/images/team/emma.jpg',
-    schools: [{ name: 'LBS', logo: '/images/logos/lbs.png' }],
+    schools: [{ name: 'LBS', logo: '/images/logos/General-logos-2.png' }],
   },
 ];
 

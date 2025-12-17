@@ -2,13 +2,19 @@
   padding: var(--spacing-xxl) 0;
   width: 100%;
   background: var(--light-gray);
+  background-image: url('/testimonials.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
+
 
 .testimonials-heading {
   font-family: var(--heading-font);
   font-size: var(--font-size-h2);
   font-weight: 700;
-  color: var(--text-color);
+  color: #ffffff;
   text-align: center;
   margin: 0 0 var(--spacing-sm) 0;
   line-height: var(--line-height-heading);
@@ -17,7 +23,8 @@
 .testimonials-subtitle {
   font-family: var(--body-font);
   font-size: var(--font-size-body);
-  color: var(--text-secondary);
+  color: #ffffff;
+  opacity: 0.8;
   text-align: center;
   margin: 0 0 var(--spacing-xl) 0;
   line-height: var(--line-height-body);

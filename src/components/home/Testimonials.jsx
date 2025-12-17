@@ -71,14 +71,7 @@ const Testimonials = () => {
                     <h4 className="testimonial-name">{testimonial.name}</h4>
                     <p className="testimonial-school">{testimonial.school} admit</p>
                   </div>
-                  {testimonial.schoolLogo && (
-                    <img
-                      src={testimonial.schoolLogo}
-                      alt={testimonial.school}
-                      className="testimonial-school-logo"
-                      loading="lazy"
-                    />
-                  )}
+                  
                 </div>
               </Card>
             </div>

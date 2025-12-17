@@ -8,7 +8,7 @@ const services = [
   {
     id: 1,
     title: 'Undergrad College Admissions',
-    image: '/images/services/college-building.jpg',
+    image: '/images/services/college.webp',
     icon: FaBuilding,
     link: '/college',
     consultation: '/college/free-consultation',
@@ -16,7 +16,7 @@ const services = [
   {
     id: 2,
     title: 'Business School Admissions',
-    image: '/images/services/business-school.jpg',
+    image: '/images/services/bussines.jpeg',
     icon: FaGraduationCap,
     link: '/mba',
     consultation: '/mba/free-consultation',
@@ -24,7 +24,7 @@ const services = [
   {
     id: 3,
     title: 'Law School Admissions',
-    image: '/images/services/law-school.jpg',
+    image: '/images/services/law.jpeg',
     icon: FaGavel,
     link: '/law',
     consultation: '/law/free-consultation',

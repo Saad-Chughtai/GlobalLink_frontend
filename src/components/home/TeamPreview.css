@@ -1,14 +1,15 @@
 .team-preview {
   padding: var(--spacing-xxl) 0;
   width: 100%;
-  background: var(--white);
+  background: #2C40A3;
+  background: radial-gradient(circle,rgba(44, 64, 163, 1) 0%, rgba(28, 39, 113, 1) 28%);;
 }
 
 .team-preview-heading {
   font-family: var(--heading-font);
   font-size: var(--font-size-h2);
   font-weight: 700;
-  color: var(--text-color);
+  color: #ffffff;
   text-align: center;
   margin: 0 0 var(--spacing-md) 0;
   line-height: var(--line-height-heading);
@@ -17,7 +18,8 @@
 .team-preview-subtitle {
   font-family: var(--body-font);
   font-size: var(--font-size-body);
-  color: var(--text-secondary);
+  color: #ffffff;
+  opacity: 0.8;
   text-align: center;
   max-width: 800px;
   margin: 0 auto var(--spacing-xl) auto;
@@ -25,19 +27,19 @@
 }
 
 .team-featured-image {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto var(--spacing-xl) auto;
+  
   border-radius: var(--border-radius-lg);
-  overflow: hidden;
+
   box-shadow: var(--shadow-lg);
 }
 
 .team-featured-image img {
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .coach-grid {
@@ -51,8 +53,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-xl);
+
   flex-wrap: wrap;
+}
+
+.team-preview-link {
+  font-family: var(--body-font);
+  font-size: var(--font-size-body);
+  font-weight: 400;
+  color: #ffffff;
+  text-decoration: none;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.team-preview-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
 }
 
 /* Responsive Styles */

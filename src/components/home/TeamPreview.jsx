@@ -1,13 +1,12 @@
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CoachCard from '../team/CoachCard';
-import Button from '../common/Button';
+
 import { coaches } from '../../data/coaches';
 import { fadeInUp, staggerContainer } from '../../utils/animations';
 import './TeamPreview.css';
 
 const TeamPreview = () => {
-  const navigate = useNavigate();
   // Show first 8 coaches
   const previewCoaches = coaches.slice(0, 8);
 
@@ -43,7 +42,7 @@ const TeamPreview = () => {
           transition={{ delay: 0.3 }}
         >
           <img
-            src="/images/team/team-featured.jpg"
+            src="/images/team/team.webp"
             alt="Fortuna Admissions Team"
             loading="lazy"
           />
@@ -56,27 +55,15 @@ const TeamPreview = () => {
           variants={fadeInUp}
           transition={{ delay: 0.4 }}
         >
-          <Button
-            variant="outline"
-            size="large"
-            onClick={() => navigate('/college/team')}
-          >
-            College Coaches
-          </Button>
-          <Button
-            variant="outline"
-            size="large"
-            onClick={() => navigate('/mba/team')}
-          >
-            MBA Coaches
-          </Button>
-          <Button
-            variant="outline"
-            size="large"
-            onClick={() => navigate('/law/team')}
-          >
-            Law School Coaches
-          </Button>
+         <Link to="/college/team" className="team-preview-link">
+            College Coaches →
+          </Link>
+          <Link to="/mba/team" className="team-preview-link">
+            MBA Coaches →
+          </Link>
+          <Link to="/law/team" className="team-preview-link">
+            Law School Coaches →
+          </Link>
         </motion.div>
       </div>
     </section>

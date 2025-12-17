@@ -50,21 +50,21 @@ const FinalCTA = () => {
               size="large"
               onClick={() => navigate('/college/free-consultation')}
             >
-              College Free Consultation
+              College Free Consultation →
             </Button>
             <Button
               variant="primary"
               size="large"
               onClick={() => navigate('/mba/free-consultation')}
             >
-              MBA Free Consultation
+              MBA Free Consultation →
             </Button>
             <Button
               variant="primary"
               size="large"
               onClick={() => navigate('/law/free-consultation')}
             >
-              Law School Free Consultation
+              Law Free Consultation →
             </Button>
           </motion.div>
         </motion.div>
