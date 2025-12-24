@@ -32,20 +32,61 @@
 
 /* Logo */
 .logo {
-  font-family: var(--heading-font);
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: var(--transition);
-  white-space: nowrap;
-  height: 48px;
   display: flex;
   align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: var(--transition);
+  height: 48px;
+  color: #000000;
 }
 
-.logo:hover {
-  color: var(--primary-hover);
+.logo-f {
+  font-family: var(--heading-font);
+  font-size: 36px;
+  font-weight: 700;
+  color: #ff6b35;
+  line-height: 1;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-fortuna {
+  font-family: var(--heading-font);
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000 !important;
+  letter-spacing: 0.5px;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+.logo-admissions {
+  font-family: var(--heading-font);
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000 !important;
+  letter-spacing: 0.5px;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+.logo:hover .logo-fortuna,
+.logo:hover .logo-admissions {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+.logo:hover .logo-f {
+  color: #ff8c5a;
 }
 
 /* Desktop Navigation */
@@ -63,6 +104,10 @@
 
 .nav-dropdown {
   position: relative;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: flex;
 }
 
 .nav-dropdown-toggle {
@@ -98,18 +143,29 @@
 /* Dropdown Menu */
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + var(--spacing-xs));
+  top: calc(100% + 4px);
   left: 0;
   background: var(--white);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-xl);
   min-width: 220px;
   padding: var(--spacing-sm);
+  padding-top: 12px;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
   animation: dropdownFadeIn 0.2s ease-out;
   z-index: var(--z-dropdown);
+}
+
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: transparent;
 }
 
 @keyframes dropdownFadeIn {
@@ -212,8 +268,21 @@
   }
 
   .logo {
-    font-size: 18px;
-    height: 36px;
+    height: 40px;
+  }
+
+  .logo-f {
+    font-size: 28px;
+  }
+
+  .logo-fortuna {
+    font-size: 16px;
+    color: #000000 !important;
+  }
+
+  .logo-admissions {
+    font-size: 12px;
+    color: #000000 !important;
   }
 
   .nav-links {

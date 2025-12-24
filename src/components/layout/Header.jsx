@@ -113,7 +113,11 @@ const Header = () => {
           <nav className="nav">
             {/* Logo */}
             <Link to="/" className="logo" onClick={closeMobileMenu}>
-              Global Link Admissions
+              <span className="logo-f">F</span>
+              <div className="logo-text">
+                <span className="logo-fortuna">GLOBAL </span>
+                <span className="logo-admissions">LINK ADMISSIONS</span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -142,6 +146,11 @@ const Header = () => {
                     <div
                       ref={dropdownRef}
                       className="dropdown-menu"
+                      onMouseEnter={() => {
+                        if (window.innerWidth > 768) {
+                          setActiveDropdown(item.key);
+                        }
+                      }}
                       onMouseLeave={() => {
                         if (window.innerWidth > 768) {
                           setActiveDropdown(null);
@@ -200,14 +209,6 @@ const Header = () => {
               ))}
             </div>
 
-            {/* Free Consultation Button (Desktop) */}
-            <Link
-              to="/free-consultation"
-              className="cta-button desktop-cta"
-              onClick={closeMobileMenu}
-            >
-              Free Consultation
-            </Link>
 
             {/* Mobile Menu Toggle */}
             <button

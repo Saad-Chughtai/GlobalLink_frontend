@@ -3,110 +3,675 @@
 }
 
 /* Hero Section */
-.services-hero {
-  padding: var(--spacing-xxl) 0 var(--spacing-xl) 0;
-  background: linear-gradient(135deg, var(--primary-color) 0%, #1a3d7a 100%);
-  color: var(--white);
+.college-services-hero {
+  position: relative;
+  padding: 80px 0 60px 0;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #4a148c 0%, #7b1fa2 30%, #e64a19 70%, #ff6f00 100%);
+  color: #ffffff;
   text-align: center;
+  overflow: hidden;
 }
 
-.services-hero-heading {
+.college-services-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    );
+  pointer-events: none;
+}
+
+.college-services-hero .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.college-services-hero-heading {
   font-family: var(--heading-font);
-  font-size: var(--font-size-h1);
+  font-size: 64px;
   font-weight: 700;
-  color: var(--white);
-  margin: 0 0 var(--spacing-md) 0;
-  line-height: var(--line-height-heading);
+  color: #ffffff;
+  margin: 0 0 24px 0;
+  line-height: 1.1;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: -0.5px;
 }
 
-.services-hero-subtitle {
+.college-services-hero-main {
+  display: block;
+}
+
+.college-services-hero-sub {
+  display: block;
+  color: #ff6f00;
+}
+
+.college-services-hero-tagline {
+  font-family: var(--heading-font);
+  font-size: 28px;
+  font-weight: 700;
+  color: #ff6f00;
+  margin: 0 0 28px 0;
+  line-height: 1.3;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.college-services-hero-description {
   font-family: var(--body-font);
-  font-size: var(--font-size-body);
-  color: var(--white);
-  opacity: 0.9;
-  margin: 0;
-  line-height: var(--line-height-body);
+  font-size: 19px;
+  line-height: 1.7;
+  color: #ffffff;
+  margin: 0 auto 36px auto;
+  max-width: 850px;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Services Section */
-.popular-services {
-  padding: var(--spacing-xxl) 0;
+.college-services-hero-button {
+  background: #ffffff !important;
+  color: #4a148c !important;
+  border: 2px solid #4a148c !important;
+  font-weight: 600;
+  padding: 14px 32px !important;
+  font-size: 16px !important;
+}
+
+.college-services-hero-button:hover {
+  background: #ffffff !important;
+  color: #4a148c !important;
+  border-color: #4a148c !important;
+  opacity: 0.95;
+}
+
+/* How It Works Section */
+.college-services-how-it-works {
+  padding: 60px 0;
   background: var(--white);
 }
 
-.section-heading {
+.college-services-how-it-works .container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.college-services-section-heading {
   font-family: var(--heading-font);
-  font-size: var(--font-size-h2);
+  font-size: 36px;
   font-weight: 700;
   color: var(--text-color);
   text-align: center;
-  margin: 0 0 var(--spacing-xl) 0;
-  line-height: var(--line-height-heading);
+  margin: 0 0 48px 0;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
 }
 
-.services-grid {
+.how-it-works-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.how-it-works-step {
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius);
+}
+
+.how-it-works-step-1 {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.step-1-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-lg);
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
 }
 
-/* CTA Section */
-.services-cta {
-  padding: var(--spacing-xxl) 0;
+.step-1-left {
+  padding: 32px;
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius);
+}
+
+.step-1-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.consultation-confirmation-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.profile-pictures-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  position: relative;
+  padding: 20px;
+}
+
+.profile-picture-blurred {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e0e0e0 0%, #b0b0b0 100%);
+  filter: blur(3px);
+  opacity: 0.6;
+}
+
+.profile-picture-main {
+  position: relative;
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+  z-index: 2;
+}
+
+.profile-image {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-check-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  background: #2E44A6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-check-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.confirmation-text {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  min-width: 280px;
+  text-align: center;
+  z-index: 3;
+}
+
+.confirmation-text p {
+  font-family: var(--body-font);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin: 0;
+  font-weight: 500;
+}
+
+.step-number {
+  font-family: var(--heading-font);
+  font-size: 14px;
+  font-weight: 700;
+  color: #ff6f00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.step-title-highlight {
+  color: #ff6f00;
+}
+
+.step-title {
+  font-family: var(--heading-font);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+.step-description {
+  font-family: var(--body-font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0 0 16px 0;
+}
+
+.step-subsection {
+  margin: 20px 0;
+}
+
+.step-subtitle {
+  font-family: var(--heading-font);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 10px 0;
+}
+
+.step-list {
+  margin: 10px 0 0 22px;
+  padding: 0;
+  list-style-type: disc;
+}
+
+.step-list li {
+  font-family: var(--body-font);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.step-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Knowledge Center Section */
+.college-services-knowledge {
+  padding: 60px 0;
   background: var(--light-gray);
+}
+
+.college-services-knowledge .container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.knowledge-center-description {
+  font-family: var(--body-font);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin: 0 auto;
+  max-width: 900px;
   text-align: center;
 }
 
-.cta-heading {
+/* Who You'll Work With Section */
+.college-services-team {
+  padding: 60px 0;
+  background: var(--white);
+}
+
+.college-services-team .container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.team-intro {
+  font-family: var(--body-font);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin: 0 auto 40px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.team-roles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-role-card {
+  padding: 24px !important;
+  height: 100%;
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+}
+
+.team-role-title {
   font-family: var(--heading-font);
-  font-size: var(--font-size-h2);
+  font-size: 20px;
   font-weight: 700;
   color: var(--text-color);
-  margin: 0 0 var(--spacing-lg) 0;
-  line-height: var(--line-height-heading);
+  margin: 0 0 12px 0;
+}
+
+.team-role-description {
+  font-family: var(--body-font);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Testimonials Section */
+.college-services-testimonials {
+  padding: 60px 0;
+  background: var(--light-gray);
+}
+
+.college-services-testimonials .container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.college-services-testimonials-heading {
+  font-family: var(--heading-font);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-color);
+  text-align: center;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.college-services-testimonials-subtitle {
+  font-family: var(--body-font);
+  font-size: 16px;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0 0 32px 0;
+}
+
+.college-services-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.college-services-testimonial-card {
+  padding: 20px !important;
+  background: var(--white);
+  height: 100%;
+}
+
+.college-services-testimonial-headline {
+  font-family: var(--heading-font);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 10px 0;
+}
+
+.college-services-testimonial-quote {
+  font-family: var(--body-font);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0 0 12px 0;
+}
+
+.college-services-testimonial-author {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--light-gray);
+}
+
+.college-services-testimonial-name {
+  font-family: var(--heading-font);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin: 0;
+  font-style: italic;
+}
+
+.college-services-testimonials-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.testimonials-cta-text {
+  font-family: var(--body-font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0 0 20px 0;
+}
+
+.testimonials-cta-text strong {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* FAQ Section */
+.college-services-faq {
+  padding: 60px 0;
+  background: var(--white);
+}
+
+.college-services-faq .container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Final CTA Section */
+.college-services-final-cta {
+  padding: 60px 0;
+  background: linear-gradient(90deg, #4a148c 0%, #7b1fa2 30%, #e64a19 70%, #ff6f00 100%);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.college-services-final-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    );
+  pointer-events: none;
+}
+
+.college-services-final-cta .container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.final-cta-text {
+  font-family: var(--body-font);
+  font-size: 20px;
+  line-height: 1.5;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+}
+
+.final-cta-text strong {
+  font-weight: 700;
+}
+
+/* Step 1 Responsive */
+@media (max-width: 1024px) {
+  .step-1-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .step-1-right {
+    min-height: 300px;
+  }
+
+  .consultation-confirmation-card {
+    max-width: 100%;
+  }
+
+  .profile-pictures-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 15px;
+  }
+
+  .profile-picture-main {
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+  }
+
+  .confirmation-text {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 20px;
+  }
 }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
+  .college-services-hero-heading {
+    font-size: 40px;
+  }
+
+  .college-services-hero-tagline {
+    font-size: 28px;
+  }
+
+  .college-services-section-heading {
+    font-size: 32px;
+  }
+
+  .team-roles {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .college-services-hero {
+    padding: 60px 0 40px 0;
+  }
+
+  .college-services-hero-heading {
+    font-size: 32px;
+  }
+
+  .college-services-hero-tagline {
+    font-size: 24px;
+  }
+
+  .college-services-hero-description {
+    font-size: 16px;
+  }
+
+  .college-services-how-it-works,
+  .college-services-knowledge,
+  .college-services-team,
+  .college-services-testimonials,
+  .college-services-faq,
+  .college-services-final-cta {
+    padding: 40px 0;
+  }
+
+  .college-services-section-heading {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .how-it-works-steps {
+    gap: 24px;
+  }
+
+  .how-it-works-step {
+    padding: 20px;
+  }
+
+  .step-title {
+    font-size: 20px;
+  }
+
+  .step-description,
+  .step-list li {
+    font-size: 15px;
+  }
+
+  .college-services-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .final-cta-text {
+    font-size: 20px;
   }
 }
 
 @media (max-width: 640px) {
-  .services-hero {
-    padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
+  .college-services-hero-heading {
+    font-size: 28px;
   }
 
-  .services-hero-heading {
-    font-size: var(--font-size-h2);
+  .college-services-hero-tagline {
+    font-size: 20px;
   }
 
-  .services-hero-subtitle {
-    font-size: var(--font-size-small);
+  .college-services-section-heading {
+    font-size: 24px;
   }
 
-  .popular-services {
-    padding: var(--spacing-xl) 0;
+  .step-title {
+    font-size: 18px;
   }
 
-  .section-heading {
-    font-size: var(--font-size-h3);
-    margin-bottom: var(--spacing-lg);
+  .team-role-title {
+    font-size: 18px;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md);
-  }
-
-  .services-cta {
-    padding: var(--spacing-xl) 0;
-  }
-
-  .cta-heading {
-    font-size: var(--font-size-h3);
+  .team-role-description {
+    font-size: 15px;
   }
 }
-
