@@ -1,18 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
-import PropTypes from 'prop-types';
+import { FiMenu, FiX } from 'react-icons/fi';
 import MobileMenu from './MobileMenu';
 import './Header.css';
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
   const headerRef = useRef(null);
-  const dropdownRef = useRef(null);
 
-  // Handle scroll for sticky header
+  // Sticky header on scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 100);
@@ -24,84 +21,19 @@ const Header = () => {
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [isMobileMenuOpen]);
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target) &&
-        !event.target.closest('.nav-dropdown')
-      ) {
-        setActiveDropdown(null);
-      }
-    };
-
-    if (activeDropdown) {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
-    }
-  }, [activeDropdown]);
-
-  // Navigation items with dropdowns
   const navItems = [
-    {
-      label: 'College',
-      key: 'college',
-      services: '/college',
-      team: '/college/team',
-      allInclusive: '/college',
-      hourlyCoaching: '/college',
-      consultation: '/college/free-consultation',
-    },
-    {
-      label: 'Business School',
-      key: 'mba',
-      services: '/mba',
-      team: '/mba/team',
-      allInclusive: '/mba',
-      hourlyCoaching: '/mba',
-      consultation: '/mba/free-consultation',
-    },
-    {
-      label: 'Law School',
-      key: 'law',
-      services: '/law',
-      team: '/law/team',
-      allInclusive: '/law',
-      hourlyCoaching: '/law',
-      consultation: '/law/free-consultation',
-    },
+    { label: 'About Us', path: '/about' },
+    { label: 'Apply Now', path: '/apply' },
+    { label: 'Contact Us', path: '/contact' },
   ];
 
-  const handleDropdownToggle = (key) => {
-    setActiveDropdown(activeDropdown === key ? null : key);
-  };
-
-  const handleDropdownMouseEnter = (key) => {
-    if (window.innerWidth > 768) {
-      setActiveDropdown(key);
-    }
-  };
-
-  const handleDropdownMouseLeave = () => {
-    if (window.innerWidth > 768) {
-      setActiveDropdown(null);
-    }
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <>
@@ -113,109 +45,32 @@ const Header = () => {
           <nav className="nav">
             {/* Logo */}
             <Link to="/" className="logo" onClick={closeMobileMenu}>
-              <span className="logo-f">F</span>
-              <div className="logo-text">
-                <span className="logo-fortuna">GLOBAL </span>
-                <span className="logo-admissions">LINK ADMISSIONS</span>
-              </div>
+              <img
+                src="/logo12.png"
+                alt="Global Link Admissions Logo"
+                className="logo-image"
+              />
             </Link>
 
             {/* Desktop Navigation */}
             <div className="nav-links">
               {navItems.map((item) => (
-                <div
-                  key={item.key}
-                  className="nav-dropdown"
-                  onMouseEnter={() => handleDropdownMouseEnter(item.key)}
-                  onMouseLeave={handleDropdownMouseLeave}
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="nav-link"
+                  onClick={closeMobileMenu}
                 >
-                  <button
-                    className="nav-dropdown-toggle"
-                    onClick={() => handleDropdownToggle(item.key)}
-                    aria-expanded={activeDropdown === item.key}
-                    aria-haspopup="true"
-                  >
-                    {item.label}
-                    <FiChevronDown
-                      className={`dropdown-icon ${
-                        activeDropdown === item.key ? 'open' : ''
-                      }`}
-                    />
-                  </button>
-                  {activeDropdown === item.key && (
-                    <div
-                      ref={dropdownRef}
-                      className="dropdown-menu"
-                      onMouseEnter={() => {
-                        if (window.innerWidth > 768) {
-                          setActiveDropdown(item.key);
-                        }
-                      }}
-                      onMouseLeave={() => {
-                        if (window.innerWidth > 768) {
-                          setActiveDropdown(null);
-                        }
-                      }}
-                    >
-                      <Link
-                        to={item.team}
-                        onClick={() => {
-                          setActiveDropdown(null);
-                          closeMobileMenu();
-                        }}
-                      >
-                        Meet The Team
-                      </Link>
-                      <Link
-                        to={item.allInclusive}
-                        onClick={() => {
-                          setActiveDropdown(null);
-                          closeMobileMenu();
-                        }}
-                      >
-                        All-Inclusive Package
-                      </Link>
-                      <Link
-                        to={item.hourlyCoaching}
-                        onClick={() => {
-                          setActiveDropdown(null);
-                          closeMobileMenu();
-                        }}
-                      >
-                        Hourly Coaching
-                      </Link>
-                      <Link
-                        to={item.services}
-                        onClick={() => {
-                          setActiveDropdown(null);
-                          closeMobileMenu();
-                        }}
-                      >
-                        Services
-                      </Link>
-                      <Link
-                        to={item.consultation}
-                        onClick={() => {
-                          setActiveDropdown(null);
-                          closeMobileMenu();
-                        }}
-                        className="dropdown-cta"
-                      >
-                        Free Consultation
-                      </Link>
-                    </div>
-                  )}
-                </div>
+                  {item.label}
+                </Link>
               ))}
             </div>
-
 
             {/* Mobile Menu Toggle */}
             <button
               className="mobile-menu-toggle"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle mobile menu"
-              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? <FiX /> : <FiMenu />}
             </button>
@@ -225,18 +80,10 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <MobileMenu
-          onClose={closeMobileMenu}
-          navItems={navItems}
-          activeDropdown={activeDropdown}
-          onDropdownToggle={handleDropdownToggle}
-        />
+        <MobileMenu onClose={closeMobileMenu} navItems={navItems} />
       )}
     </>
   );
 };
-
-// Header component has no props, so PropTypes validation is not applicable
-Header.propTypes = {};
 
 export default Header;

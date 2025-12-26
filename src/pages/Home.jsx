@@ -1,8 +1,6 @@
 import Hero from '../components/home/Hero';
 import LogoCarousel from '../components/home/LogoCarousel';
-import ServicesCards from '../components/home/ServicesCards';
 import ValueProps from '../components/home/ValueProps';
-import TeamPreview from '../components/home/TeamPreview';
 import Testimonials from '../components/home/Testimonials';
 import MediaMentions from '../components/home/MediaMentions';
 import HowItWorks from '../components/home/HowItWorks';
@@ -14,17 +12,15 @@ const Home = () => {
   return (
     <>
       <SEO 
-        title="MBA, Law, and College Admissions Consulting"
-        description="Expert admissions consulting from former admissions directors at top schools. Triple your chances of admission with Global Link."
-        keywords="MBA admissions, law school admissions, college admissions, consulting, Global Link Admissions"
+        title="University Admissions Consulting - Global Link"
+        description="Expert university admissions consulting from former admissions directors. Get personalized guidance for your university application journey with Global Link."
+        keywords="university admissions, admissions consulting, Global Link Admissions, education consulting, university applications"
         image="/images/og-image.jpg"
       />
       <div className="home-page">
         <Hero />
         <LogoCarousel />
-        <ServicesCards />
         <ValueProps />
-        <TeamPreview />
         <Testimonials />
         <MediaMentions />
         <HowItWorks />

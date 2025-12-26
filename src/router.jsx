@@ -2,24 +2,18 @@ import { lazy, Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import LoadingSpinner from './components/common/LoadingSpinner';
+// Import Applications directly instead of lazy loading
+import ApplicationsFixed from './pages/ApplicationsFixed';
 
-// Lazy load all pages
+// Lazy load all pages except Applications
 const Home = lazy(() => import('./pages/Home'));
-const MBAServices = lazy(() => import('./pages/MBAServices'));
-const LawServices = lazy(() => import('./pages/LawServices'));
-const CollegeServices = lazy(() => import('./pages/CollegeServices'));
-const MBATeam = lazy(() => import('./pages/MBATeam'));
-const LawTeam = lazy(() => import('./pages/LawTeam'));
-const CollegeTeam = lazy(() => import('./pages/CollegeTeam'));
-const FreeConsultation = lazy(() => import('./pages/FreeConsultation'));
-const CollegeConsultation = lazy(() => import('./pages/CollegeConsultation'));
-const MBAConsultation = lazy(() => import('./pages/MBAConsultation'));
-const LawSchoolConsultation = lazy(() => import('./pages/LawSchoolConsultation'));
+const About = lazy(() => import('./pages/About'));
+const Apply = lazy(() => import('./pages/Apply'));
+const Contact = lazy(() => import('./pages/Contact'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
-const About = lazy(() => import('./pages/About'));
 const Corporate = lazy(() => import('./pages/Corporate'));
-const Contact = lazy(() => import('./pages/Contact'));
+const UKAdmissionForm = lazy(() => import('./pages/UKAdmissionForm'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -45,123 +39,28 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'free-consultation',
+        path: 'about',
         element: (
           <LazyLoadWrapper>
-            <FreeConsultation />
+            <About />
           </LazyLoadWrapper>
         ),
       },
       {
-        path: 'mba',
-        children: [
-          {
-            index: true,
-            element: (
-              <LazyLoadWrapper>
-                <MBAServices />
-              </LazyLoadWrapper>
-            ),
-          },
-          {
-            path: 'services',
-            element: (
-              <LazyLoadWrapper>
-                <MBAServices />
-              </LazyLoadWrapper>
-            ),
-          },
-          {
-            path: 'team',
-            element: (
-              <LazyLoadWrapper>
-                <MBATeam />
-              </LazyLoadWrapper>
-            ),
-          },
-          {
-            path: 'free-consultation',
-            element: (
-              <LazyLoadWrapper>
-                <MBAConsultation />
-              </LazyLoadWrapper>
-            ),
-          },
-        ],
+        path: 'apply',
+        element: (
+          <LazyLoadWrapper>
+            <Apply />
+          </LazyLoadWrapper>
+        ),
       },
       {
-        path: 'law',
-        children: [
-          {
-            index: true,
-            element: (
-              <LazyLoadWrapper>
-                <LawServices />
-              </LazyLoadWrapper>
-            ),
-          },
-          {
-            path: 'services',
-            element: (
-              <LazyLoadWrapper>
-                <LawServices />
-              </LazyLoadWrapper>
-            ),
-          },
-          {
-            path: 'team',
-            element: (
-              <LazyLoadWrapper>
-                <LawTeam />
-              </LazyLoadWrapper>
-            ),
-          },
-          {
-            path: 'free-consultation',
-            element: (
-              <LazyLoadWrapper>
-                <LawSchoolConsultation />
-              </LazyLoadWrapper>
-            ),
-          },
-        ],
-      },
-      {
-        path: 'college',
-        children: [
-          {
-            index: true,
-            element: (
-              <LazyLoadWrapper>
-                <CollegeServices />
-              </LazyLoadWrapper>
-            ),
-          },
-          {
-            path: 'services',
-            element: (
-              <LazyLoadWrapper>
-                <CollegeServices />
-              </LazyLoadWrapper>
-            ),
-          },
-          {
-            path: 'team',
-            element: (
-              <LazyLoadWrapper>
-                <CollegeTeam />
-              </LazyLoadWrapper>
-            ),
-          },
-          {
-            path: 'free-consultation',
-            element: (
-              <LazyLoadWrapper>
-                <CollegeConsultation />
-              </LazyLoadWrapper>
-            ),
-          },
-        ],
+        path: 'contact',
+        element: (
+          <LazyLoadWrapper>
+            <Contact />
+          </LazyLoadWrapper>
+        ),
       },
       {
         path: 'blog',
@@ -185,14 +84,6 @@ export const router = createBrowserRouter([
         ],
       },
       {
-        path: 'about',
-        element: (
-          <LazyLoadWrapper>
-            <About />
-          </LazyLoadWrapper>
-        ),
-      },
-      {
         path: 'corporate',
         element: (
           <LazyLoadWrapper>
@@ -201,12 +92,16 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'contact',
+        path: 'uk-admission',
         element: (
           <LazyLoadWrapper>
-            <Contact />
+            <UKAdmissionForm />
           </LazyLoadWrapper>
         ),
+      },
+      {
+        path: 'applications',
+        element: <ApplicationsFixed />,
       },
       {
         path: 'privacy-policy',

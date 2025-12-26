@@ -4,11 +4,11 @@ import './MediaMentions.css';
 
 const publications = [
   { id: 1, name: 'Forbes', logo: '/images/logos/image-69.png' },
-  { id: 2, name: 'Times Higher Education', logo: '/images/logos/General-logos-2.png' },
+  { id: 2, name: 'Times Higher Education', logo: '/images/logos/image-66.png' },
   { id: 3, name: 'The Economist', logo: '/images/logos/theeconomistlogo-min-1024x500.png' },
-  { id: 4, name: 'CNN', logo: '/images/logos/General-logos-2.png' },
-  { id: 5, name: 'Bloomberg', logo: '/images/logos/General-logos-2.png' },
-  { id: 6, name: 'NBC', logo: '/images/logos/General-logos-2.png' },
+  { id: 4, name: 'CNN', logo: '/images/logos/image.png' },
+  { id: 5, name: 'Bloomberg', logo: '/images/logos/image-65.png' },
+  { id: 6, name: 'NBC', logo: '/images/logos/image-1.png' },
   { id: 7, name: 'Wall Street Journal', logo: '/images/logos/WSJ.png' },
   { id: 8, name: 'Poets&Quants', logo: '/images/logos/poetsandquants-logo.png' },
   { id: 9, name: 'Les Echos', logo: '/images/logos/les-echos.png' },

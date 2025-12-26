@@ -1,11 +1,13 @@
 .final-cta {
   padding: 40px 0;
   width: 100%;
-  background: #2E44A6;
-  background: -webkit-linear-gradient(90deg,rgba(46, 68, 166, 1) 2%, rgba(146, 58, 139, 1) 50%, rgba(216, 96, 61, 1) 100%);
-  background: -moz-linear-gradient(90deg,rgba(46, 68, 166, 1) 2%, rgba(146, 58, 139, 1) 50%, rgba(216, 96, 61, 1) 100%);
-  background: linear-gradient(90deg,rgba(46, 68, 166, 1) 2%, rgba(146, 58, 139, 1) 50%, rgba(216, 96, 61, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(
+  background: linear-gradient(
+  90deg,
+  rgba(15, 58, 95, 1) 0%,     /* Navy Blue */
+  rgba(30, 42, 74, 1) 45%,   /* Dark Blue */
+  rgba(99, 181, 74, 1) 100%  /* Brand Green */
+);
+filter: progid:DXImageTransform.Microsoft.gradient(
   startColorstr="#2E44A6",
   endColorstr="#D8603D",
   GradientType=1

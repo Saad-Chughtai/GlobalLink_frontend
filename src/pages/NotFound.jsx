@@ -20,11 +20,7 @@ const NotFound = () => {
             >
               Go to Homepage
             </Button>
-            <Link to="/free-consultation">
-              <Button variant="outline" size="large">
-                Book Free Consultation
-              </Button>
-            </Link>
+            
           </div>
         </div>
       </div>

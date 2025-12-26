@@ -1,121 +1,104 @@
 .footer {
-  background: #1c2771;
+  background: #0F3A5F;
   color: var(--light-gray);
   padding: var(--spacing-xxl) 0 var(--spacing-lg);
   margin-top: auto;
 }
 
 .footer-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--spacing-xxxl);
+  align-items: start;
   margin-bottom: var(--spacing-xl);
-  gap: var(--spacing-xl);
 }
 
-/* Left Side - Logo, Email, Social */
+/* Left Side - Logo and Contact */
 .footer-left {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
-  flex: 0 0 auto;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
 }
 
 .footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display: block;
   text-decoration: none;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
-.logo-f {
-  font-family: var(--heading-font);
-  font-size: 36px;
-  font-weight: 700;
-  color: #ff6b35;
-  line-height: 1;
+.footer-logo:hover {
+  opacity: 0.8;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.logo-fortuna {
-  font-family: var(--heading-font);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: 0.5px;
-}
-
-.logo-admissions {
-  font-family: var(--heading-font);
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--white);
-  letter-spacing: 0.5px;
+.footer-logo-image {
+  width: 15rem;
+  height: auto;
+  object-fit: contain;
 }
 
 .footer-email {
-  color: var(--light-gray);
+  color: #FFFFFF;
   text-decoration: none;
-  font-size: var(--font-size-body);
+  font-size: 15px;
+  font-weight: 400;
   transition: var(--transition);
-  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
 }
 
 .footer-email:hover {
-  color: var(--white);
+  color: var(--primary-green);
 }
 
 .footer-social {
   display: flex;
   gap: var(--spacing-sm);
-  margin-top: var(--spacing-xs);
 }
 
 .social-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   background: transparent;
-  border-radius: 50%;
-  color: var(--light-gray);
+  border-radius: 4px;
+  color: #FFFFFF;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
   transition: var(--transition);
 }
 
 .social-icon:hover {
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--primary-green);
 }
 
 /* Right Side - Navigation Columns */
 .footer-right {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-xl);
-  flex: 1;
-  justify-content: flex-end;
+  padding-top: 0;
 }
 
 .footer-column {
   display: flex;
   flex-direction: column;
-  min-width: 150px;
 }
 
 .footer-heading {
   font-family: var(--heading-font);
-  font-size: var(--font-size-h4);
-  font-weight: 700;
-  color: var(--white);
+  font-size: 22px;
+  font-weight: 600;
+  color: #63B54A;
   margin: 0 0 var(--spacing-md) 0;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .footer-links {
@@ -124,23 +107,31 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-xs);
 }
 
 .footer-links li {
   margin: 0;
 }
 
-.footer-links a {
-  color: var(--light-gray);
+.footer-links button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: #FFFFFF;
   text-decoration: none;
-  font-size: var(--font-size-body);
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 400;
   transition: var(--transition);
-  display: inline-block;
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.8;
 }
 
-.footer-links a:hover {
-  color: var(--white);
+.footer-links button:hover {
+  color: var(--primary-green);
 }
 
 /* Footer Bottom */
@@ -157,36 +148,31 @@
 }
 
 .footer-legal a {
-  color: var(--light-gray);
+  color: #FFFFFF;
   text-decoration: none;
-  font-size: var(--font-size-small);
+  font-size: 14px;
   transition: var(--transition);
 }
 
 .footer-legal a:hover {
-  color: var(--white);
-  text-decoration: underline;
+  color: var(--primary-green);
 }
 
 .footer-separator {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
   margin: 0 var(--spacing-xs);
 }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .footer-main {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: var(--spacing-xl);
   }
 
   .footer-right {
-    justify-content: flex-start;
-    width: 100%;
-  }
-
-  .footer-column {
-    min-width: 140px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
   }
 }
 
@@ -200,16 +186,16 @@
   }
 
   .footer-right {
-    flex-wrap: wrap;
-    gap: var(--spacing-lg);
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
   }
 
-  .footer-column {
-    min-width: 120px;
+  .footer-logo-image {
+    width: 120px;
   }
 
   .footer-heading {
-    font-size: 16px;
+    font-size: 13px;
     margin-bottom: var(--spacing-sm);
   }
 
@@ -217,30 +203,18 @@
     gap: var(--spacing-xs);
   }
 
-  .footer-links a {
-    font-size: 14px;
-  }
-
-  .logo-f {
-    font-size: 32px;
-  }
-
-  .logo-fortuna {
-    font-size: 18px;
-  }
-
-  .logo-admissions {
+  .footer-links button {
     font-size: 12px;
   }
 
   .footer-email {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .social-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
   }
 
   .footer-separator {
@@ -255,12 +229,19 @@
 }
 
 @media (max-width: 480px) {
-  .footer-right {
-    flex-direction: column;
-    gap: var(--spacing-md);
+  .footer-logo-image {
+    width: 100px;
   }
 
-  .footer-column {
-    min-width: 100%;
+  .footer-heading {
+    font-size: 12px;
+  }
+
+  .footer-links button {
+    font-size: 11px;
+  }
+
+  .footer-email {
+    font-size: 12px;
   }
 }

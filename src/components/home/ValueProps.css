@@ -6,7 +6,29 @@
   background: var(--white);
 }
 
-/* Subtle gradient at bottom */
+/* Add a subtle radial gradient overlay for depth */
+.value-props::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at top right,
+    rgba(143, 210, 106, 0.03) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    ellipse at bottom left,
+    rgba(15, 58, 95, 0.04) 0%,
+    transparent 50%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Beautiful theme-matched gradient background */
 .value-props::after {
   content: '';
   position: absolute;
@@ -15,9 +37,11 @@
   right: 0;
   height: 100%;
   background: linear-gradient(
-    to bottom,
-    rgba(68, 101, 242, 0.02) 0%,
-    rgba(243, 107, 67, .2) 100%
+    135deg,
+    rgba(30, 42, 74, 0.03) 0%,
+    rgba(15, 58, 95, 0.05) 25%,
+    rgba(99, 181, 74, 0.04) 75%,
+    rgba(143, 210, 106, 0.06) 100%
   );
   z-index: 0;
   pointer-events: none;
@@ -65,6 +89,9 @@
   gap: var(--spacing-xl);
   align-content: start;
   height: fit-content;
+  /* Prevent layout collapse */
+  contain: layout;
+  min-height: 400px;
 }
 
 .stat-item {
@@ -73,6 +100,9 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--spacing-md) 0;
+  /* Prevent collapse during animations */
+  min-height: 160px;
+  contain: layout;
 }
 
 .stat-value {
@@ -87,7 +117,11 @@
 .stat-underline {
   width: 60px;
   height: 4px;
-  background: #F59E0B;
+  background: linear-gradient(
+    90deg,
+    var(--primary-green) 0%,
+    var(--soft-light-green) 100%
+  );
   margin: var(--spacing-sm) 0 var(--spacing-xs) 0;
   border-radius: 2px;
 }
@@ -110,6 +144,9 @@
   height: fit-content;
   width: 100%;
   min-width: 0; /* Prevents grid blowout */
+  /* Prevent layout collapse */
+  contain: layout;
+  min-height: 600px; /* Ensure consistent height */
 }
 
 /* Ensure motion wrapper doesn't constrain card width */
@@ -117,6 +154,8 @@
   width: 100%;
   min-width: 0;
   display: flex;
+  /* Prevent animation-related collapse */
+  min-height: 280px;
 }
 
 .feature-card {
@@ -131,12 +170,51 @@
   position: relative;
   min-height: 260px;
   height: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(99, 181, 74, 0.1);
   width: 100%;
   min-width: 0; /* Prevents overflow */
   overflow: visible; /* Ensures content isn't clipped */
   box-sizing: border-box;
   flex: 1 1 auto;
+  transition: var(--transition);
+  /* Prevent layout collapse during animations */
+  contain: layout style;
+  will-change: transform;
+}
+
+.feature-card:hover {
+  border-color: rgba(99, 181, 74, 0.2);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Add subtle gradient border effect on hover */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--border-radius-lg);
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 181, 74, 0.1) 0%,
+    rgba(143, 210, 106, 0.05) 50%,
+    rgba(30, 42, 74, 0.08) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
 }
 
 .feature-icon {
@@ -154,7 +232,7 @@
 .feature-icon svg {
   width: 28px;
   height: 28px;
-  color: #F59E0B;
+  color: var(--primary-green);
 }
 
 .feature-title {
@@ -189,7 +267,7 @@
   left: 8px;
   width: 18px;
   height: 18px;
-  background: #F59E0B;
+  background: var(--soft-light-green);
   border-radius: 50% 50% 50% 0;
   opacity: 0.5;
   z-index: -1;
@@ -210,14 +288,20 @@
 
   .stats-grid {
     grid-template-columns: repeat(3, 1fr);
+    min-height: 300px;
   }
 
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
+    min-height: 500px;
   }
 
   .feature-card {
     min-height: auto;
+  }
+
+  .features-grid > div {
+    min-height: 240px;
   }
 }
 
@@ -239,6 +323,11 @@
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
+    min-height: 250px;
+  }
+
+  .stat-item {
+    min-height: 120px;
   }
 
   .stat-value {
@@ -248,6 +337,11 @@
   .features-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
+    min-height: auto;
+  }
+
+  .features-grid > div {
+    min-height: 200px;
   }
 
   .feature-icon {
@@ -273,10 +367,19 @@
 
   .stats-grid {
     grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .stat-item {
+    min-height: 100px;
   }
 
   .stat-value {
     font-size: 40px;
+  }
+
+  .features-grid > div {
+    min-height: 180px;
   }
 
   .feature-icon {

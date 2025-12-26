@@ -1,35 +1,55 @@
 :root {
-  /* Primary Colors - Royal Blue Palette */
-  --primary-color: #1e40af;
-  --primary-hover: #2563eb;
-  --deep-navy: #1e293b;
-  --soft-white: #fafafa;
+  /* Primary Colors - New Theme */
+  --primary-dark-blue: #1E2A4A;     /* Primary Dark Blue - Text + Link Icon */
+  --secondary-navy-blue: #0F3A5F;   /* Secondary Navy Blue - Globe + Depth Areas */
+  --primary-green: #63B54A;         /* Primary Green - Link + "INK" text */
+  --soft-light-green: #8FD26A;      /* Soft Light Green - Gradient / Accent */
+  --white: #FFFFFF;                 /* White - Background */
+  --soft-shadow-gray: #E6E8EC;      /* Soft Shadow Gray - UI Shadow */
   
-  /* Accent Colors - Lavender Palette */
-  --accent-lavender: #a78bfa;
-  --accent-lavender-hover: #8b5cf6;
-  --sky-blue: #0ea5e9;
-  --slate: #64748b;
+  /* Color Mappings for Existing Variables */
+  --primary-color: var(--primary-dark-blue);
+  --primary-hover: var(--secondary-navy-blue);
+  --deep-navy: var(--secondary-navy-blue);
+  --soft-white: var(--white);
   
-  /* Neutral Scale */
+  /* Accent Colors - Updated to use new theme */
+  --accent-primary: var(--primary-green);
+  --accent-secondary: var(--soft-light-green);
+  --sky-blue: var(--secondary-navy-blue);
+  --slate: var(--primary-dark-blue);
+  
+  /* Neutral Scale - Updated */
   --gray-50: #f9fafb;
-  --gray-100: #f3f4f6;
+  --gray-100: var(--soft-shadow-gray);
   --gray-600: #4b5563;
-  --gray-900: #111827;
+  --gray-900: var(--primary-dark-blue);
   
   /* Text Colors */
-  --text-color: var(--deep-navy);
-  --text-secondary: var(--slate);
-  --text-light: var(--gray-600);
+  --text-color: var(--primary-dark-blue);
+  --text-secondary: var(--secondary-navy-blue);
+  --text-light: #4b5563;
   
   /* Background Colors */
-  --light-gray: var(--gray-100);
-  --white: #FFFFFF;
-  --bg-gradient: linear-gradient(135deg, #2563eb 0%, #a78bfa 100%);
+  --light-gray: var(--soft-shadow-gray);
+  --bg-gradient: linear-gradient(135deg, var(--primary-green) 0%, var(--soft-light-green) 100%);
   
   /* Status Colors */
-  --success-green: #10B981;
+  --success-green: var(--primary-green);
   --error-red: #EF4444;
+  
+  /* Specific Use Case Colors */
+  --header-bg: var(--primary-dark-blue);
+  --footer-bg: var(--secondary-navy-blue);
+  --button-primary: var(--primary-dark-blue);
+  --button-primary-hover: var(--secondary-navy-blue);
+  --button-cta: var(--primary-green);
+  --button-cta-hover: var(--soft-light-green);
+  --link-color: var(--primary-green);
+  --link-hover: var(--soft-light-green);
+  --active-state: var(--primary-green);
+  --border-color: var(--soft-shadow-gray);
+  --card-shadow: var(--soft-shadow-gray);
   
   /* Typography */
   --heading-font: 'Montserrat', sans-serif;
@@ -66,11 +86,11 @@
   --border-radius-2xl: 24px; /* rounded-3xl */
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: 0.2s ease-out;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.3);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-sm: 0 2px 4px rgba(230, 232, 236, 0.3);
+  --shadow-md: 0 4px 6px rgba(230, 232, 236, 0.4);
+  --shadow-lg: 0 10px 25px rgba(230, 232, 236, 0.5);
+  --shadow-xl: 0 20px 50px rgba(230, 232, 236, 0.6);
+  --shadow-2xl: 0 25px 50px -12px rgba(230, 232, 236, 0.7);
   
   /* Z-Index Scale */
   --z-header: 50;

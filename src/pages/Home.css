@@ -3,3 +3,14 @@
   overflow-x: hidden;
 }
 
+.admission-form-section {
+  padding: var(--spacing-xxl) 0;
+  background: var(--gray-50);
+}
+
+@media (max-width: 768px) {
+  .admission-form-section {
+    padding: var(--spacing-xl) 0;
+  }
+}
+

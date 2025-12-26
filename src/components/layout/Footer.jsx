@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import {
   FaLinkedin,
   FaYoutube,
@@ -9,7 +9,20 @@ import {
 import './Footer.css';
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const currentYear = new Date().getFullYear();
+
+  // Handle navigation with scroll to top for same page
+  const handleNavigation = (path) => {
+    if (location.pathname === path) {
+      // If we're already on the target page, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Navigate to the new page
+      navigate(path);
+    }
+  };
 
   return (
     <footer className="footer">
@@ -17,13 +30,13 @@ const Footer = () => {
         <div className="footer-main">
           {/* Left Side - Logo, Email, Social Media */}
           <div className="footer-left">
-            <Link to="/" className="footer-logo">
-              <span className="logo-f">F</span>
-              <div className="logo-text">
-                <span className="logo-fortuna">GLOBAL LINK</span>
-                <span className="logo-admissions">ADMISSIONS</span>
-              </div>
-            </Link>
+            <button onClick={() => handleNavigation('/')} className="footer-logo">
+               <img
+                src="/logo12.png"
+                alt="Global Link Admissions Logo"
+                className="footer-logo-image"
+              />
+            </button>
             <a href="mailto:info@globallinkadmissions.com" className="footer-email">
               info@globallinkadmissions.com
             </a>
@@ -78,60 +91,35 @@ const Footer = () => {
 
           {/* Right Side - Navigation Columns */}
           <div className="footer-right">
-            {/* Column 1 - College */}
+            {/* Column 1 - Services */}
             <div className="footer-column">
-              <h4 className="footer-heading">College</h4>
+              <h4 className="footer-heading">Services</h4>
               <ul className="footer-links">
                 <li>
-                  <Link to="/about">About Us</Link>
+                  <button onClick={() => handleNavigation('/about')}>About Us</button>
                 </li>
                 <li>
-                  <Link to="/college/team">Meet the Team</Link>
+                  <button onClick={() => handleNavigation('/apply')}>Apply Now</button>
                 </li>
                 <li>
-                  <Link to="/college">Services</Link>
+                  <button onClick={() => handleNavigation('/contact')}>Contact Us</button>
                 </li>
-                <li>
-                  <Link to="/college/free-consultation">Free Consultation</Link>
-                </li>
+               
               </ul>
             </div>
 
-            {/* Column 2 - Business School */}
+            {/* Column 2 - Company */}
             <div className="footer-column">
-              <h4 className="footer-heading">Business School</h4>
+              <h4 className="footer-heading">Company</h4>
               <ul className="footer-links">
                 <li>
-                  <Link to="/about">About Us</Link>
+                  <button onClick={() => handleNavigation('/about')}>About</button>
                 </li>
+    
                 <li>
-                  <Link to="/mba/team">Meet the Team</Link>
+                  <button onClick={() => handleNavigation('/applications')}>Applications</button>
                 </li>
-                <li>
-                  <Link to="/mba">Services</Link>
-                </li>
-                <li>
-                  <Link to="/mba/free-consultation">Free Consultation</Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Column 3 - Law School */}
-            <div className="footer-column">
-              <h4 className="footer-heading">Law School</h4>
-              <ul className="footer-links">
-                <li>
-                  <Link to="/about">About Us</Link>
-                </li>
-                <li>
-                  <Link to="/law/team">Meet the Team</Link>
-                </li>
-                <li>
-                  <Link to="/law">Services</Link>
-                </li>
-                <li>
-                  <Link to="/law/free-consultation">Free Consultation</Link>
-                </li>
+                
               </ul>
             </div>
           </div>

@@ -106,14 +106,14 @@ const ValueProps = () => {
             className="stats-section-wrapper"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
             <motion.h2
               className="value-props-heading"
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               variants={fadeInUp}
             >
               What Makes Global Link Different
@@ -136,7 +136,7 @@ const ValueProps = () => {
             className="features-grid"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
             {features.map((feature) => {

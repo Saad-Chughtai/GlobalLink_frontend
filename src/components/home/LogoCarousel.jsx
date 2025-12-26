@@ -8,7 +8,7 @@ const LogoCarousel = () => {
   const duplicatedSchools = [...schools, ...schools, ...schools];
 
   return (
-    <section className="logo-carousel-section">
+    <section id="schools-section" className="logo-carousel-section">
       <div className="container">
         <motion.h2
           className="logo-carousel-heading"
