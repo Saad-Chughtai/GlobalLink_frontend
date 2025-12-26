@@ -16,10 +16,9 @@ A modern, responsive React application for Global Link Admissions, providing com
 - **Home** - Hero section, value propositions, testimonials, and statistics
 - **About** - Company information and team details
 - **Apply** - Comprehensive application form with validation
-- **Contact** - Contact information and inquiry form
-- **Blog** - Articles and resources for students
-- **Corporate** - Corporate services and partnerships
+- **Contact** - Contact information and inquiry form with EmailJS integration
 - **Applications Dashboard** - Protected route for application management
+- **Legal Pages** - Privacy Policy and Terms of Service
 
 ### Technical Features
 - **Protected Routes** with authentication

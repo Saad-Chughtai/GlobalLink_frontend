@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
 import SEO from '../components/common/SEO';
 import Button from '../components/common/Button';
 import { fadeInUp, staggerContainer } from '../utils/animations';
 import './Contact.css';
 
-const Contact = () => {
+const ContactNew = () => {
+  console.log('🔥 NEW CONTACT COMPONENT LOADED WITH EMAILJS 🔥');
+  
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
@@ -16,9 +19,15 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
+  // Initialize EmailJS when component mounts
+  useEffect(() => {
+    console.log('🚀 Initializing EmailJS...');
+    emailjs.init('MyXzX-fdbx-H63JpO');
+    console.log('✅ EmailJS initialized with public key: MyXzX-fdbx-H63JpO');
+  }, []);
+
   const handleNavigateToForm = () => {
     navigate('/apply');
-    // Small delay to ensure page loads before scrolling
     setTimeout(() => {
       const formElement = document.getElementById('application-form');
       if (formElement) {
@@ -43,15 +52,49 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
+    console.log('🚀 FORM SUBMITTED - STARTING EMAILJS PROCESS 🚀');
+
     try {
-      // Simulate API call - replace with actual endpoint
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const serviceID = 'service_v0q9rx6';
+      const templateID = 'template_sw9ebvu';
       
-      console.log('Contact form submitted:', formData);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_name: 'Global Link Admissions Team',
+      };
+
+      console.log('📧 EmailJS Configuration:');
+      console.log('Service ID:', serviceID);
+      console.log('Template ID:', templateID);
+      console.log('Public Key: MyXzX-fdbx-H63JpO');
+      console.log('Template Parameters:', templateParams);
+
+      console.log('📤 Sending email via EmailJS...');
+      
+      const response = await emailjs.send(
+        serviceID,
+        templateID,
+        templateParams
+      );
+
+      console.log('📨 EmailJS Response:');
+      console.log('Status:', response.status);
+      console.log('Text:', response.text);
+      console.log('Full Response:', response);
+      
+      if (response && (response.status === 200 || response.text === 'OK')) {
+        console.log('✅ SUCCESS: Email sent successfully!');
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        console.log('⚠️ WARNING: Unexpected response');
+        setSubmitStatus('error');
+      }
     } catch (error) {
-      console.error('Error submitting contact form:', error);
+      console.log('❌ ERROR: EmailJS failed');
+      console.error('Error details:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -373,5 +416,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
-
+export default ContactNew;
