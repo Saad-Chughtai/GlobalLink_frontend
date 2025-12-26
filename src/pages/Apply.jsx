@@ -24,18 +24,29 @@ const Apply = () => {
     }
   };
 
-  const handleFormSubmit = async (apiData) => {
+  const handleFormSubmit = async (formDataOrJson, hasFiles = true) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
     
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/applications/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(apiData),
-      });
+      let response;
+      
+      if (hasFiles && formDataOrJson instanceof FormData) {
+        // Try FormData first
+        response = await fetch('https://globallink.eu.pythonanywhere.com/api/applications/', {
+          method: 'POST',
+          body: formDataOrJson, // FormData - don't set Content-Type header
+        });
+      } else {
+        // Fallback to JSON
+        response = await fetch('https://globallink.eu.pythonanywhere.com/api/applications/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formDataOrJson),
+        });
+      }
       
       if (response.ok) {
         const result = await response.json();
@@ -50,14 +61,25 @@ const Apply = () => {
           });
         }, 100);
       } else {
-        const errorData = await response.json();
-        console.error('API Error:', errorData);
+        let errorMessage = `Submission failed: ${response.status}`;
+        try {
+          const errorData = await response.json();
+          console.error('API Error Details:', errorData);
+          errorMessage = errorData.detail || errorData.message || errorData.error || errorMessage;
+        } catch (e) {
+          console.error('Could not parse error response');
+        }
         setSubmitStatus('error');
-        throw new Error(`Submission failed: ${response.status}`);
+        throw new Error(errorMessage);
       }
     } catch (error) {
       console.error('Error:', error);
       setSubmitStatus('error');
+      
+      // If it's a 400 error and we tried FormData, the form will handle the fallback
+      if (!error.message.includes('400')) {
+        throw error; // Re-throw non-400 errors
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -241,7 +263,7 @@ const Apply = () => {
 
           <FinalForm 
             onSubmit={handleFormSubmit}
-            apiUrl="http://127.0.0.1:8000/api/applications/"
+            apiUrl="https://globallink.eu.pythonanywhere.com/api/applications/"
             isSubmitting={isSubmitting}
             disabled={submitStatus === 'success'}
           />

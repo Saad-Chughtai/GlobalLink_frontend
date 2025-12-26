@@ -38,9 +38,9 @@ const ApplicationsFixed = () => {
   const fetchApplications = async () => {
     setLoading(true);
     try {
-      console.log('🔄 Fetching applications from:', 'http://127.0.0.1:8000/api/applications/');
+      console.log('🔄 Fetching applications from:', 'https://globallink.eu.pythonanywhere.com/api/applications/');
       
-      const response = await fetch('http://127.0.0.1:8000/api/applications/', {
+      const response = await fetch('https://globallink.eu.pythonanywhere.com/api/applications/', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -275,7 +275,7 @@ const ApplicationsFixed = () => {
             📊 Showing <strong>{filteredApplications.length}</strong> of <strong>{applications.length}</strong> applications
             {process.env.NODE_ENV === 'development' && (
               <div style={{ marginTop: '10px', fontSize: '12px', color: '#718096' }}>
-                🔧 Debug: API URL = http://127.0.0.1:8000/api/applications/ | Loading: {loading ? 'Yes' : 'No'}
+                🔧 Debug: API URL = https://globallink.eu.pythonanywhere.com/api/applications/ | Loading: {loading ? 'Yes' : 'No'}
               </div>
             )}
           </div>

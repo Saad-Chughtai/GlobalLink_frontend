@@ -132,6 +132,35 @@
   background: rgba(99, 181, 74, 0.05);
 }
 
+.form-help {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.file-selected {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: rgba(99, 181, 74, 0.1);
+  border: 1px solid var(--primary-green);
+  border-radius: var(--border-radius);
+  font-size: 13px;
+  color: var(--primary-green);
+  font-weight: 500;
+}
+
+.file-selected ul {
+  margin: 4px 0 0 0;
+  padding-left: 16px;
+}
+
+.file-selected li {
+  margin: 2px 0;
+  font-size: 12px;
+}
+
 .checkbox-group {
   margin-top: 25px;
   padding: 20px;
